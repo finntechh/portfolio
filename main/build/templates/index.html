@@ -12,12 +12,28 @@
     
     <header>
         <nav>
-
+            <ul>
+                <li>
+                    <a href="{% url 'home' %}">Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'uns' %}">Über uns</a>
+                </li>
+                <li>
+                    <a href="{% url 'kontakt' %}">Kontakt</a>
+                </li>
+                <li>
+                    <a href="{% url 'mitglied' %}">Mitglied werden</a>
+                </li>
+            </ul>
         </nav>
     </header>
 
     <main>
         {% block home %}{% endblock home %}
+        {% block uns %}{% endblock uns %}
+        {% block kontakt %}{% endblock kontakt %}
+        {% block mitglied %}{% endblock mitglied %}
     </main>
 
     <footer>
