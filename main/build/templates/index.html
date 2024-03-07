@@ -4,10 +4,25 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=#, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{title}} - Landjugend Primisweiler</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
 <body>
-    hallo
+    
+    <header>
+        <nav>
+
+        </nav>
+    </header>
+
+    <main>
+        {% block home %}{% endblock home %}
+    </main>
+
+    <footer>
+        
+    </footer>
+
 </body>
 </html>
