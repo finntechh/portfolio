@@ -9,11 +9,11 @@ def home(request):
     }
     return render(request, 'home.html', context)
 
-def uns(request):
+def mich(request):
     context = {
-        "title": "Über Uns"
+        "title": "Über mich"
     }
-    return render(request, 'uns.html', context)
+    return render(request, 'mich.html', context)
 
 def kontakt(request):
     context = {
@@ -21,10 +21,10 @@ def kontakt(request):
     }
     return render(request, 'kontakt.html', context)
 
-def mitglied(request):
+def arbeit(request):
     context = {
-        "title": "Mitglied werden"
+        "title": "Meine Arbeit"
     }
-    return render(request, 'mitglied.html', context)
+    return render(request, 'arbeit.html', context)
 
 

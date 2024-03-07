@@ -4,7 +4,7 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=#, initial-scale=1.0">
-    <title>{{title}} - Landjugend Primisweiler</title>
+    <title>{{title}} - FH Webdev</title>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
@@ -17,13 +17,13 @@
                     <a href="{% url 'home' %}">Home</a>
                 </li>
                 <li>
-                    <a href="{% url 'uns' %}">Über uns</a>
+                    <a href="{% url 'mich' %}">Über mich</a>
                 </li>
                 <li>
                     <a href="{% url 'kontakt' %}">Kontakt</a>
                 </li>
                 <li>
-                    <a href="{% url 'mitglied' %}">Mitglied werden</a>
+                    <a href="{% url 'arbeit' %}">Meine Arbeit</a>
                 </li>
             </ul>
         </nav>
