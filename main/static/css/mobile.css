@@ -1,0 +1,17 @@
+
+@media screen and (max-width: 768px) {
+    
+    .nav-list {
+        display: none;
+    }
+
+}
+
+
+@media screen and (min-width: 768px) {
+    
+    .nav-dropdown-btn {
+        display: none;
+    }
+
+}

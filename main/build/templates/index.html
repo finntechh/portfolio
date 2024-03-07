@@ -7,29 +7,80 @@
     <title>{{title}} - FH Webdev</title>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mobile.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    <script>
+        function getCookie(name) {
+          let cookieValue = null;
+          if (document.cookie && document.cookie !== "") {
+            const cookies = document.cookie.split(";");
+            for (let i = 0; i < cookies.length; i++) {
+              const cookie = cookies[i].trim();
+              // Does this cookie string begin with the name we want?
+              if (cookie.substring(0, name.length + 1) === name + "=") {
+                cookieValue = decodeURIComponent(
+                  cookie.substring(name.length + 1)
+                );
+                break;
+              }
+            }
+          }
+          return cookieValue;
+        }
+        const csrftoken = getCookie("csrftoken");
+      </script>
 </head>
 <body>
+
+    <script defer src="{% static 'js/main.js' %}"></script>
     
     <header>
         <nav>
-            <ul>
-                <li>
-                    <a href="{% url 'home' %}">Home</a>
-                </li>
-                <li>
-                    <a href="{% url 'mich' %}">Über mich</a>
-                </li>
-                <li>
-                    <a href="{% url 'kontakt' %}">Kontakt</a>
-                </li>
-                <li>
-                    <a href="{% url 'arbeit' %}">Meine Arbeit</a>
-                </li>
-            </ul>
+
+            <div class="nav-logo-container">
+                <a href="{% url 'home' %}">
+                    <img class="nav-logo" src="{% static 'images/logo.png' %}" alt="logo">
+                </a>
+            </div>
+
+            <div class="nav-menu" x-data="{navDropdown: false}">
+                <ul class="nav-list">
+                    <li class="nav-list-item">
+                        <a class="nav-list-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a class="nav-list-link" href="{% url 'arbeit' %}">Meine Arbeit</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a class="nav-list-link" href="{% url 'mich' %}">Über mich</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a class="nav-list-link" href="{% url 'kontakt' %}">Kontakt</a>
+                    </li>
+
+                </ul>
+
+                <div class="nav-dropdown-btn" @click="navDropdown = !navDropdown; handleScroll(navDropdown); burgerAnimation(navDropdown)">
+                    <span class="nav-button-rect1"></span>
+                    <span class="nav-button-rect2"></span>
+                    <span class="nav-button-rect3"></span>
+                </div>
+
+                <div class="nav-dropdown-menu" x-show="navDropdown">
+                    dropdown menu
+                </div>
+
+            </div>
+
         </nav>
     </header>
 
     <main>
+        <div class="content">
+        </div>
+        <div class="content" style="background-color: var(--dark);">
+            
+        </div>
         {% block home %}{% endblock home %}
         {% block uns %}{% endblock uns %}
         {% block kontakt %}{% endblock kontakt %}
